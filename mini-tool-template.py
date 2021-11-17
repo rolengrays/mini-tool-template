@@ -35,7 +35,7 @@ args = parser.parse_args()
 jst = datetime.timezone(datetime.timedelta(hours=+9), name='JST')
 formatter = logging.Formatter(
     fmt=r'%(asctime)s [%(levelname)s] %(message)s',
-    datefmt=r'%Y-%m-%dT%H:%M:%S%:z'
+    datefmt=r'%Y-%m-%dT%H:%M:%S%z'
     )
 formatter.converter = lambda t: datetime.datetime.fromtimestamp(t, tz=jst).timetuple()
 ### info handler
